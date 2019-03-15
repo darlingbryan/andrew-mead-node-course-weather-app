@@ -8,7 +8,7 @@ const forecast = (latitude, longtitude, callback) => {
         } else if (response.body.error) {
             callback('Unable to find location. Could you be more specific?', undefined)
         } else {
-            callback(undefined, `${response.body.daily.data[0].summary} The temperature is ${response.body.currently.temperature} and it has a ${response.body.currently.precipProbability * 100}% to rain. `
+            callback(undefined, `${response.body.daily.data[0].summary} The temperature is ${response.body.currently.temperature} and it has a ${response.body.currently.precipProbability * 100}% to rain. The humidity is ${response.body.currently.humidity * 100}`
             )
         }
     })
